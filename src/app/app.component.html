@@ -1,0 +1,47 @@
+<header>
+  <section class="encabezado">
+      
+      <div class="logo">Noticias</div>
+      <div class="buscar"><input type="text" placeholder="Buscar..."></div>
+      <div class="opciones"><img src="./assets/dots-menu.png" alt=""></div>
+
+  </section>
+  <section class="nav">
+
+      <a href="#" class="nav1" id="entretenimiento">Entretenimiento</a>
+      <a href="#" class="nav2" id="economia">Economia</a>
+      <a href="#" class="nav3" id="deportes">Deportes</a>
+      <a href="#" class="nav4" id="politica">Politica</a>
+
+  </section>
+
+</header>
+
+
+<section class="body">
+  <div class="clima_container">
+      <div class="clima">
+        <app-clima 
+        [localidad]="weather.location.name"
+        [temperatura]="weather.current.temp_c"
+        [condicionIcon]="weather.current.condition.icon"
+        [viento]="weather.current.wind_kph"
+        [texto]="weather.current.condition.text"
+        [atributos]="weather.current.condition.text"
+        ></app-clima>    
+      </div>
+  </div>
+  
+  <div class="noticias">
+   
+      <article *ngFor="let post of posts">
+        <app-noticia [titulo]="post.title" [body]="post.body" [fecha]="post.userId" [imagen]="post.userId"></app-noticia>
+      </article>
+    
+      
+  </div>
+</section>
+
+
+
+<router-outlet />
