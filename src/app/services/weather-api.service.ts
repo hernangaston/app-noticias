@@ -11,6 +11,7 @@ const urlWeather = `https://api.weatherapi.com/v1/current.json?q=${locationCity}
 @Injectable({
   providedIn: 'root'
 })
+
 export class WeatherApiService {
   constructor(private http: HttpClient) {   }
 

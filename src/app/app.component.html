@@ -32,16 +32,11 @@
       </div>
   </div>
   
-  <div class="noticias">
-   
+  <div class="noticias">   
       <article *ngFor="let post of posts">
         <app-noticia [titulo]="post.title" [body]="post.body" [fecha]="post.userId" [imagen]="post.userId"></app-noticia>
       </article>
-    
-      
   </div>
 </section>
-
-
 
 <router-outlet />
