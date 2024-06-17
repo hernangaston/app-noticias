@@ -15,23 +15,19 @@ import { ClimaComponent } from './clima/clima.component';
 })
 
 export class AppComponent implements OnInit {
+  //VER QUE TIPO  DE DATO VIENE PARA PODER MOSTRAR
   posts: any;
   weather: any;
-  constructor(private apiService: NoticiasApiService, private weatherService: WeatherApiService) { }
+  constructor(private noticiasApiService: NoticiasApiService, private weatherService: WeatherApiService) { }
 
   ngOnInit(): void {
-    this.apiService.getData().subscribe(data => {
+    this.noticiasApiService.getData().subscribe(data => {
       this.posts = data;
-      console.log(this.posts);
     });
 
     this.weatherService.getData().subscribe(data=>{
       this.weather = data;
-      console.log(this.weather);
     })
   }
-  
-  title = "test app";  
-  
 }
 
