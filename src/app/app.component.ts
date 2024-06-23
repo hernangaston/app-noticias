@@ -22,7 +22,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.noticiasApiService.getData().subscribe(data => {
-      this.posts = data;
+      const res = JSON.stringify(data);
+      this.posts = JSON.parse(res).results;
     });
 
     this.weatherService.getData().subscribe(data=>{
