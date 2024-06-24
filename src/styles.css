@@ -72,9 +72,6 @@ header {
 }
 
 .noticias{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
     background-color: rgb(32, 33, 36);
     width: 800px;
     padding: 16px;
